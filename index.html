@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philipp Zerna — General Manager | Elis Mannheim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --white: #ffffff;
+            --bg: #f8f9fa;
+            --bg-dark: #f0f1f3;
+            --text: #1a1d21;
+            --text-light: #5a6169;
+            --elis: #c41230;
+            --elis-dark: #a00f28;
+            --border: #e5e7eb;
+        }
+
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 60px;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .elis-logo-img {
+            height: 32px;
+            width: auto;
+        }
+
+        .hero {
+            padding: 140px 60px 100px;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-dark) 100%);
+        }
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-text {
+            max-width: 600px;
+        }
+        .hero-tag {
+            display: inline-block;
+            background: var(--elis);
+            color: white;
+            padding: 8px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+        .hero-title {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        .hero-sub {
+            font-size: 20px;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--elis);
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 6px;
+        }
+        .hero-btn:hover {
+            background: var(--elis-dark);
+        }
+        .hero-image {
+            width: 100%;
+            height: 480px;
+            background-image: url('https://raw.githubusercontent.com/philipp-zerna/elis-90-tage/main/ChatGPT%20Image%2011.%20Mai%202026%2C%2017_58_51.png?v=1');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        section {
+            padding: 80px 60px;
+        }
+        .section-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .section-header {
+            margin-bottom: 50px;
+        }
+        .section-label {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--elis);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .section-title {
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .warum-elis {
+            background: var(--bg-dark);
+            padding: 80px 60px;
+        }
+        .warum-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .warum-item {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 8px;
+            border-left: 3px solid var(--elis);
+        }
+        .warum-item h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .warum-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .demut {
+            background: var(--white);
+            padding: 60px;
+        }
+        .demut-box {
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-dark) 100%);
+            padding: 40px 50px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 4px solid var(--elis);
+        }
+        .demut-box p {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text);
+            font-style: italic;
+        }
+        .demut-box strong {
+            font-weight: 600;
+            color: var(--elis);
+        }
+
+        .erfahrung {
+            background: var(--white);
+            padding: 80px 60px;
+        }
+        .erfahrung-box {
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-dark) 100%);
+            padding: 50px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            border-left: 4px solid var(--elis);
+        }
+        .erfahrung-box p {
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .erfahrung-box strong {
+            font-weight: 500;
+            color: var(--elis);
+        }
+        .erfahrung-source {
+            margin-top: 24px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .checkliste {
+            background: var(--bg);
+        }
+        .checkliste-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .check-item {
+            background: var(--white);
+            padding: 28px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .check-item:hover {
+            border-color: var(--elis);
+        }
+        .check-item h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .check-item h3::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: var(--elis);
+            border-radius: 50%;
+        }
+        .check-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .fuehrung {
+            background: var(--white);
+        }
+        .fuehrung-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .fuehrung-text {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .fuehrung-text strong {
+            font-weight: 600;
+            color: var(--elis);
+        }
+
+        .manifesto {
+            background: var(--bg);
+            padding: 100px 60px;
+        }
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .manifesto-image {
+            width: 100%;
+            height: 400px;
+            background: url('https://raw.githubusercontent.com/philipp-zerna/elis-90-tage/main/ChatGPT%20Image%2011.%20Mai%202026%2C%2017_53_17.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .manifesto-text {
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: var(--text);
+        }
+        .manifesto-text strong {
+            font-weight: 600;
+            color: var(--elis);
+        }
+
+        .split {
+            background: var(--white);
+        }
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .split-image {
+            width: 100%;
+            height: 450px;
+            background: url('https://raw.githubusercontent.com/philipp-zerna/elis-90-tage/main/ChatGPT%20Image%2011.%20Mai%202026%2C%2017_53_13.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        .split-text h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        .split-text p {
+            font-size: 17px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .timeline {
+            background: var(--bg);
+        }
+        .timeline-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        .timeline-image {
+            width: 100%;
+            height: 350px;
+            background: url('https://raw.githubusercontent.com/philipp-zerna/elis-90-tage/main/ChatGPT%20Image%2011.%20Mai%202026%2C%2017_54_28.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .phase-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            border-top: 3px solid var(--elis);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .phase-num {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--elis);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .phase-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .phase-period {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        .phase-points {
+            list-style: none;
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .dashboard {
+            background: var(--white);
+        }
+        .dashboard-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        .dashboard-image {
+            width: 100%;
+            height: 350px;
+            background: url('https://raw.githubusercontent.com/philipp-zerna/elis-90-tage/main/ChatGPT%20Image%2011.%20Mai%202026%2C%2017_55_50.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .dash-card {
+            background: var(--bg);
+            padding: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .dash-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--elis);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .dash-text {
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .closing {
+            background: var(--bg);
+            padding: 100px 60px;
+        }
+        .closing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .closing-image {
+            width: 100%;
+            height: 400px;
+            background: url('https://raw.githubusercontent.com/philipp-zerna/elis-90-tage/main/ChatGPT%20Image%2011.%20Mai%202026%2C%2017_58_51.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+        .closing-content {
+            text-align: left;
+        }
+        .closing-text {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .closing-text strong {
+            font-weight: 600;
+            color: var(--elis);
+        }
+
+        footer {
+            background: var(--text);
+            padding: 50px 60px;
+            text-align: center;
+        }
+        footer p {
+            color: #888;
+            font-size: 14px;
+        }
+        footer .elis {
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 900px) {
+            .hero-content,
+            .manifesto-grid,
+            .split-grid,
+            .timeline-intro,
+            .dashboard-intro,
+            .closing-grid,
+            .warum-grid,
+            .checkliste-grid { grid-template-columns: 1fr; }
+            .timeline-grid,
+            .dashboard-grid { grid-template-columns: 1fr; }
+            section { padding: 60px 30px; }
+            .hero { padding: 120px 30px 60px; }
+            .hero-title { font-size: 32px; }
+            .warum-elis { padding: 60px 30px; }
+            .erfahrung { padding: 60px 30px; }
+            .erfahrung-box { padding: 30px; }
+            .erfahrung-box p { font-size: 18px; }
+            .demut { padding: 40px 30px; }
+            .demut-box { padding: 30px; }
+            .demut-box p { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                Philipp Zerna
+                <img src="https://raw.githubusercontent.com/philipp-zerna/elis-90-tage/main/Elis-Logo-HD.webp?v=1" alt="Elis" class="elis-logo-img">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-tag">90-Tage-Plan</div>
+                <h1 class="hero-title">General Manager<br>Niederlassung Mannheim</h1>
+                <p class="hero-sub">Ich bringe operative Stärke, klare Struktur und sichtbare Führungspräsenz für den Einstieg bei Elis mit.</p>
+                <a href="#fahrplan" class="hero-btn">Zum Fahrplan</a>
+            </div>
+            <div class="hero-image"></div>
+        </div>
+    </section>
+
+    <section class="demut">
+        <div class="demut-box">
+            <p>Mir ist bewusst, dass ich in eine <strong>neue Größenordnung von Verantwortung</strong> hineinwachse — genau darin liegt für mich der Reiz. Ich komme nicht als fertiger CEO, sondern mit dem festen Willen, mich einzuarbeiten, zuzuhören und Schritt für Schritt Vertrauen aufzubauen.</p>
+        </div>
+    </section>
+
+    <section class="warum-elis">
+        <div class="section-content">
+            <div class="section-header">
+                <div class="section-label">Die Position</div>
+                <h2 class="section-title">Was mich an der Rolle bei Elis anspricht</h2>
+            </div>
+            <div class="warum-grid">
+                <div class="warum-item">
+                    <h3>Operative Tiefe</h3>
+                    <p>450 Mitarbeiter, Schichtbetrieb, Logistik — echte Führung mit Substanz statt nur Zahlen betrachten</p>
+                </div>
+                <div class="warum-item">
+                    <h3>Verlässliche Strukturen</h3>
+                    <p>Stabile Abläufe aufbauen, klare Verantwortlichkeiten definieren, das Fundament stärken</p>
+                </div>
+                <div class="warum-item">
+                    <h3>Messbarer Impact</h3>
+                    <p>Volle P&L-Verantwortung, echte Entscheidungsmacht, Ergebnisse die man sieht und spürt</p>
+                </div>
+                <div class="warum-item">
+                    <h3>Entwicklungsfeld</h3>
+                    <p>Wachstum schaffen, aber nicht um jeden Preis — mit Bedacht und dem Team zusammen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="erfahrung">
+        <div class="section-content">
+            <div class="section-header">
+                <div class="section-label">Aus der Praxis</div>
+                <h2 class="section-title">Was ich unter Druck gelernt habe</h2>
+            </div>
+            <div class="erfahrung-box">
+                <p>„Wenn drei Leute in der Frühschicht ausfallen, zwei Maschinen streiken und der Kunde trotzdem seine Ware will — <strong>da zählt keine Management-Theorie</strong>. Da zählt: Prioritäten setzen, das Team stabil halten, kommunizieren. Bei dm habe ich gelernt, dass klare Ansagen mehr helfen als lange Erklärungen, wenn der Druck steigt."</p>
+                <div class="erfahrung-source">— Erfahrung aus 5 Jahren dm-drogerie-markt, stellv. Gruppenleiter Kommissionierung</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkliste">
+        <div class="section-content">
+            <div class="section-header">
+                <div class="section-label">Erste Wochen</div>
+                <h2 class="section-title">Worauf ich konkret achte</h2>
+            </div>
+            <div class="checkliste-grid">
+                <div class="check-item">
+                    <h3>Schichtstabilität</h3>
+                    <p>Wer fehlt wann? Warum? Welche Muster gibt es bei Ausfällen?</p>
+                </div>
+                <div class="check-item">
+                    <h3>Kommunikationswege</h3>
+                    <p>Wer spricht mit wem? Wo stockt die Information zwischen Büro und Shopfloor?</p>
+                </div>
+                <div class="check-item">
+                    <h3>Personalausfälle</h3>
+                    <p>Nicht die Quote bewundern, die Ursachen verstehen — und schnell reagieren können</p>
+                </div>
+                <div class="check-item">
+                    <h3>Qualitätsprobleme</h3>
+                    <p>Was läuft schief? Wer bemerkt es zuerst? Wie wird reagiert?</p>
+                </div>
+                <div class="check-item">
+                    <h3>Schichtübergaben</h3>
+                    <p>Informationsfluss, Kontinuität, was bleibt hängen zwischen Früh- und Spätschicht?</p>
+                </div>
+                <div class="check-item">
+                    <h3>Führungspraxis</h3>
+                    <p>Wer führt wen? Wo ist die Verbindung zu dünn? Wo fehlt Rückendeckung?</p>
+                </div>
+                <div class="check-item">
+                    <h3>KPI-Sichtbarkeit</h3>
+                    <p>Wer sieht was? Wann? In welcher Form — und kann damit wirklich etwas anfangen?</p>
+                </div>
+                <div class="check-item">
+                    <h3>Shopfloor-Präsenz</h3>
+                    <p>Täglich vor Ort, nicht nur aus dem Büro. Die Realität riecht anders als der Plan.</p>
+                </div>
+                <div class="check-item">
+                    <h3>Schnelle Erfolge</h3>
+                    <p>Dem Team zeigen: Hier tut sich was. Vertrauen durch sichtbare Verbesserung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fuehrung">
+        <div class="section-content">
+            <div class="section-header">
+                <div class="section-label">Meine Überzeugung</div>
+                <h2 class="section-title">So führe ich</h2>
+            </div>
+            <div class="fuehrung-content">
+                <p class="fuehrung-text">Ich glaube an sichtbare Führung, klare Erwartungen und operative Präsenz. Entscheidend sind für mich konkretes Handeln, messbare Ergebnisse und echte Verlässlichkeit.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="manifesto">
+        <div class="section-content">
+            <div class="manifesto-grid">
+                <div class="manifesto-image"></div>
+                <div class="manifesto-text">
+                    Keine Revolution.<br><strong>Stabile Abläufe.</strong><br>Messbare Wirkung.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="split">
+        <div class="section-content">
+            <div class="split-grid">
+                <div class="split-image"></div>
+                <div class="split-text">
+                    <div class="section-label">Mein Ansatz</div>
+                    <h2>Struktur vor Schnelligkeit</h2>
+                    <p>Ich suche keine Veränderung um jeden Preis. Ich suche stabile Abläufe, klare Verantwortlichkeiten und ein Team, das weiß, woran es arbeitet. Erst das Fundament, dann das Wachstum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline" id="fahrplan">
+        <div class="section-content">
+            <div class="timeline-intro">
+                <div>
+                    <div class="section-label">Der Fahrplan</div>
+                    <h2 class="section-title">Drei Phasen, ein Ziel</h2>
+                </div>
+                <div class="timeline-image"></div>
+            </div>
+            <div class="timeline-grid">
+                <div class="phase-card">
+                    <div class="phase-num">PHASE 01</div>
+                    <h3 class="phase-title">Verstehen</h3>
+                    <div class="phase-period">Tag 0 — 30</div>
+                    <ul class="phase-points">
+                        <li>Täglich auf dem Shopfloor</li>
+                        <li>Schlüsselpersonen kennenlernen</li>
+                        <li>Prozessrealität erleben</li>
+                    </ul>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-num">PHASE 02</div>
+                    <h3 class="phase-title">Stabilisieren</h3>
+                    <div class="phase-period">Tag 31 — 60</div>
+                    <ul class="phase-points">
+                        <li>Quick Wins umsetzen</li>
+                        <li>Vertrauen aufbauen</li>
+                        <li>Verantwortlichkeiten klären</li>
+                    </ul>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-num">PHASE 03</div>
+                    <h3 class="phase-title">Verbessern</h3>
+                    <div class="phase-period">Tag 61 — 90</div>
+                    <ul class="phase-points">
+                        <li>Abläufe optimieren</li>
+                        <li>KPI-Rhythmus einführen</li>
+                        <li>Bilanz ziehen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dashboard">
+        <div class="section-content">
+            <div class="dashboard-intro">
+                <div>
+                    <div class="section-label">Meine Steuerungsgrößen</div>
+                    <h2 class="section-title">Worauf ich schaue</h2>
+                </div>
+                <div class="dashboard-image"></div>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dash-card">
+                    <div class="dash-title">Personalausfälle</div>
+                    <div class="dash-text">Ursachen verstehen, rechtzeitig reagieren, Stabilität schaffen</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-title">Schichtplanung</div>
+                    <div class="dash-text">Planbarkeit erhöhen, Überstunden reduzieren, Engpässe vermeiden</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-title">Qualitätsabweichungen</div>
+                    <div class="dash-text">Schnell erfassen, systematisch angehen, wiederholen verhindern</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-title">Fluktuation</div>
+                    <div class="dash-text">Warum gehen Leute? Was können wir besser machen?</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-title">Lieferzuverlässigkeit</div>
+                    <div class="dash-text">Kundenzusagen einhalten, interne Abläufe stabilisieren</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-title">Informationstransparenz</div>
+                    <div class="dash-text">Alle sehen, was sie brauchen, um gute Entscheidungen zu treffen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing">
+        <div class="section-content">
+            <div class="closing-grid">
+                <div class="closing-image"></div>
+                <div class="closing-content">
+                    <p class="closing-text">
+                        Ich komme mit <strong>Lust auf echte operative Arbeit</strong>, dem Respekt vor dem, was bereits läuft, und dem festen Willen, mich und das Geschäft Schritt für Schritt weiterzuentwickeln.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="elis">ELIS</div>
+        <p>Philipp Zerna — General Manager Niederlassung Mannheim</p>
+    </footer>
+
+</body>
+</html>
